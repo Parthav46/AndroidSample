@@ -2,5 +2,7 @@
     <string name="app_name">Football Ref</string>
 
     <string name="initial_score">0</string>
-    <string name="goal">Goal</string>
+    <string name="reset">Reset</string>
+    <string name="team_a_title">Team A</string>
+    <string name="team_b_title">Team B</string>
 </resources>

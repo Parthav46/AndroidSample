@@ -3,24 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/counter"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15sp"
-        android:text="@string/initial_score"
-        android:textSize="40sp"
-        android:textStyle="bold"/>
+        android:layout_margin="15sp">
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/team_a_title"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/counterA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="increaseGoal"
+                android:padding="30sp"
+                android:text="@string/initial_score"
+                android:textSize="80sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="3sp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/team_b_title"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/counterB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="increaseGoal"
+                android:padding="30sp"
+                android:text="@string/initial_score"
+                android:textSize="80sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/increament"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/goal"
-        android:onClick="increaseGoal"/>
+        android:onClick="resetGoal"
+        android:text="@string/reset" />
 
 </LinearLayout>
