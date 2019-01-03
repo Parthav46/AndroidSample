@@ -12,14 +12,51 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void increaseGoal(View view) {
-        TextView counter = (TextView) findViewById(view.getId());
-        int score = Integer.parseInt(counter.getText().toString());
-        score++;
-        String counterValue = String.valueOf(score);
-        counter.setText(counterValue);
+        final TextView counterA = (TextView) findViewById(R.id.counterA);
+        final TextView counterB = (TextView) findViewById(R.id.counterB);
+
+        counterA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int score = Integer.parseInt(counterA.getText().toString());
+                score++;
+                String counterValue = String.valueOf(score);
+                counterA.setText(counterValue);
+            }
+        });
+
+        counterA.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                int score = Integer.parseInt(counterA.getText().toString());
+                if(score > 0) score--;
+                String counterValue = String.valueOf(score);
+                counterA.setText(counterValue);
+                return true;
+            }
+        });
+
+        counterB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int score = Integer.parseInt(counterB.getText().toString());
+                score++;
+                String counterValue = String.valueOf(score);
+                counterB.setText(counterValue);
+            }
+        });
+
+        counterB.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                int score = Integer.parseInt(counterB.getText().toString());
+                if(score > 0) score--;
+                String counterValue = String.valueOf(score);
+                counterB.setText(counterValue);
+                return true;
+            }
+        });
     }
 
     public void resetGoal(View view) {
