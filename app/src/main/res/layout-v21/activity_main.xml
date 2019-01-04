@@ -72,6 +72,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10sp"
+        android:textColor="@color/colorTextMain"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="0:0"/>
+
     <Button
         android:id="@+id/increament"
         android:layout_width="wrap_content"
