@@ -8,10 +8,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int scoreA;
+    private int scoreB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scoreA = 0;
+        scoreB = 0;
 
         final TextView counterA = (TextView) findViewById(R.id.counterA);
         final TextView counterB = (TextView) findViewById(R.id.counterB);
@@ -19,9 +25,8 @@ public class MainActivity extends AppCompatActivity {
         counterA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int score = Integer.parseInt(counterA.getText().toString());
-                score++;
-                String counterValue = String.valueOf(score);
+                scoreA++;
+                String counterValue = String.valueOf(scoreA);
                 counterA.setText(counterValue);
             }
         });
@@ -29,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
         counterA.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                int score = Integer.parseInt(counterA.getText().toString());
-                if(score > 0) score--;
-                String counterValue = String.valueOf(score);
+                if (scoreA > 0) scoreA--;
+                String counterValue = String.valueOf(scoreA);
                 counterA.setText(counterValue);
                 return true;
             }
@@ -40,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
         counterB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int score = Integer.parseInt(counterB.getText().toString());
-                score++;
-                String counterValue = String.valueOf(score);
+                scoreB++;
+                String counterValue = String.valueOf(scoreB);
                 counterB.setText(counterValue);
             }
         });
@@ -50,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
         counterB.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                int score = Integer.parseInt(counterB.getText().toString());
-                if(score > 0) score--;
-                String counterValue = String.valueOf(score);
+                if (scoreB > 0) scoreB--;
+                String counterValue = String.valueOf(scoreB);
                 counterB.setText(counterValue);
                 return true;
             }
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
     public void resetGoal(View view) {
         TextView counterA = (TextView) findViewById(R.id.counterA);
         TextView counterB = (TextView) findViewById(R.id.counterB);
+        scoreA = 0;
+        scoreB = 0;
         String counterValue = "0";
         counterA.setText(counterValue);
         counterB.setText(counterValue);

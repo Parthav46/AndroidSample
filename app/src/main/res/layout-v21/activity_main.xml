@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15sp"
-        android:background="@color/colorAccent"
+        android:backgroundTint="@color/colorAccent"
         android:onClick="resetGoal"
         android:paddingLeft="30sp"
         android:paddingRight="30sp"
