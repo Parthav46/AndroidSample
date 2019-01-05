@@ -32,12 +32,37 @@
                 android:id="@+id/counterA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
                 android:gravity="center"
                 android:padding="30sp"
                 android:text="@string/initial_score"
                 android:textColor="@color/colorTextMain"
                 android:textSize="80sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15sp">
+
+                <Button
+                    android:id="@+id/yellowA"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cardYellow"
+                    android:onClick="displayCard" />
+
+                <Button
+                    android:id="@+id/redA"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cardRed"
+                    android:onClick="displayCard" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <TextView
@@ -63,12 +88,37 @@
                 android:id="@+id/counterB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
                 android:gravity="center"
                 android:padding="30sp"
                 android:text="@string/initial_score"
                 android:textColor="@color/colorTextMain"
                 android:textSize="80sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15sp">
+
+                <Button
+                    android:id="@+id/yellowB"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cardYellow"
+                    android:onClick="displayCard" />
+
+                <Button
+                    android:id="@+id/redB"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cardRed"
+                    android:onClick="displayCard" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -85,7 +135,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/progress_back"
             android:max="10000"
-            android:progress="0"
             android:progressDrawable="@drawable/progress_ring"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +148,7 @@
             android:padding="10sp"
             android:text=""
             android:textColor="@color/colorTextMain"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +160,7 @@
         android:id="@+id/increament"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15sp"
+        android:layout_margin="10sp"
         android:backgroundTint="@color/colorAccent"
         android:onClick="resetGoal"
         android:paddingLeft="30sp"

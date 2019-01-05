@@ -1,5 +1,6 @@
 package com.example.footballref;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         timeLeft = time;
         isTimerRunning = false;
 
-        counterA = (TextView) findViewById(R.id.counterA);
-        counterB = (TextView) findViewById(R.id.counterB);
-        timeView = (TextView) findViewById(R.id.time);
-        timeProgress = (ProgressBar) findViewById(R.id.time_progress);
+        counterA = findViewById(R.id.counterA);
+        counterB = findViewById(R.id.counterB);
+        timeView = findViewById(R.id.time);
+        timeProgress = findViewById(R.id.time_progress);
 
         counterA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        timeView.setOnClickListener(new View.OnClickListener() {
+        timeProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(isTimerRunning){
@@ -146,5 +147,21 @@ public class MainActivity extends AppCompatActivity {
         String counterValue = "0";
         counterA.setText(counterValue);
         counterB.setText(counterValue);
+    }
+
+    public void displayCard(View view) {
+        int id = view.getId();
+        Intent cardIntent = null;
+        switch (id) {
+            case R.id.yellowA:
+            case R.id.yellowB:
+                cardIntent = new Intent(this, YellowCardActivity.class);
+                break;
+            case R.id.redA:
+            case R.id.redB:
+                cardIntent = new Intent(this, RedCardActivity.class);
+                break;
+        }
+        if(cardIntent != null) startActivity(cardIntent);
     }
 }
