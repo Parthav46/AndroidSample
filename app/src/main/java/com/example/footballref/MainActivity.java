@@ -151,17 +151,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayCard(View view) {
         int id = view.getId();
-        Intent cardIntent = null;
+        Intent cardIntent = new Intent(this, CardActivity.class);
         switch (id) {
             case R.id.yellowA:
             case R.id.yellowB:
-                cardIntent = new Intent(this, YellowCardActivity.class);
+                cardIntent.putExtra("color", R.color.cardYellow);
                 break;
             case R.id.redA:
             case R.id.redB:
-                cardIntent = new Intent(this, RedCardActivity.class);
+                cardIntent.putExtra("color", R.color.cardRed);
                 break;
         }
-        if(cardIntent != null) startActivity(cardIntent);
+        startActivity(cardIntent);
     }
 }

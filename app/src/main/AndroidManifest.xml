@@ -19,10 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".YellowCardActivity"
-            android:theme="@style/CardTheme" />
-        <activity
-            android:name=".RedCardActivity"
+            android:name=".CardActivity"
             android:theme="@style/CardTheme"/>
     </application>
 
