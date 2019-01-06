@@ -20,7 +20,14 @@
         </activity>
         <activity
             android:name=".CardActivity"
-            android:theme="@style/CardTheme"/>
+            android:theme="@style/CardTheme" />
+
+        <provider
+            android:name=".data.MatchProvider"
+            android:authorities="com.example.footballref"
+            android:exported="false" />
+
+        <activity android:name=".HistoryActivity"/>
     </application>
 
 </manifest>

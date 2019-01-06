@@ -3,6 +3,12 @@
 
     <string name="initial_score">0</string>
     <string name="reset">Reset</string>
+    <string name="save">Save</string>
+    <string name="history">History</string>
     <string name="team_a_title">Team A</string>
     <string name="team_b_title">Team B</string>
+    <string name="title_time">Time</string>
+    <string name="input_time">Enter Time</string>
+    <string name="title_team">Team Name</string>
+    <string name="input_team">Enter Team Name</string>
 </resources>
