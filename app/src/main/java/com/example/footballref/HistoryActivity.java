@@ -3,7 +3,6 @@ package com.example.footballref;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.footballref.data.MatchContract.MatchEntry;
@@ -20,12 +19,7 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
         fetchData();
 
-        ListView list = (ListView) findViewById(R.id.list);
-        //ArrayList<String> content = new ArrayList<>();
-        //for(MatchData data : dataArrayList) {
-        //   content.add(data.getTeamA() + '-' + String.valueOf(data.getScoreA()) + "--" + String.valueOf(data.getScoreB()) + '-' + data.getTeamB());
-        //}
-        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, content);
+        ListView list = findViewById(R.id.list);
         CustomListAdapter adapter1 = new CustomListAdapter(this, dataArrayList);
         list.setAdapter(adapter1);
     }

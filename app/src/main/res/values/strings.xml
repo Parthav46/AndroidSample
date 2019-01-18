@@ -11,4 +11,5 @@
     <string name="input_time">Enter Time</string>
     <string name="title_team">Team Name</string>
     <string name="input_team">Enter Team Name</string>
+    <string name="divider">-</string>
 </resources>
